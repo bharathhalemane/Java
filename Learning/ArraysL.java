@@ -95,7 +95,7 @@ public class ArraysL {
 
         // Enhanced by me to check actual work goto MyMethods class
         int[] concatArray=MyMethods.concatArray(arr4,arr5);     //Check MyMethods java class
-        System.out.println(Arrays.toString(concatArray));     // output: [1, 2, 3, 4, 5, 6, 7, 8]
+//        System.out.println(Arrays.toString(concatArray));     // output: [1, 2, 3, 4, 5, 6, 7, 8]
 
 
         /* Array Slicing */
