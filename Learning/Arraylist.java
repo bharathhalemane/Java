@@ -230,37 +230,6 @@ public class Arraylist {
 
 //        System.out.println("Type of agesArr: " + agesArr.getClass().getSimpleName());
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         sc.close();
     }
 }
