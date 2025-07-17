@@ -95,7 +95,7 @@ public class ArraysL {
 
         // Enhanced by me to check actual work goto MyMethods class
         int[] concatArray=MyMethods.concatArray(arr4,arr5);     //Check MyMethods java class
-//        System.out.println(Arrays.toString(concatArray));     // output: [1, 2, 3, 4, 5, 6, 7, 8]
+        System.out.println(Arrays.toString(concatArray));     // output: [1, 2, 3, 4, 5, 6, 7, 8]
 
 
         /* Array Slicing */
@@ -107,7 +107,7 @@ public class ArraysL {
 //        System.out.println(Arrays.toString(newArray));    //output: [2, 3]
 
         /* Multi Dimensional Array */
-        // A multi-dimensional array consists of an array of arrays.
+        // A multidimensional array consists of an array of arrays.
 
 
         // 2D Array
@@ -151,7 +151,7 @@ public class ArraysL {
 
 
         /* Iterating Over a 2d array */
-        // we can use nested loops to iterate over a two dimensional array
+        // we can use nested loops to iterate over a two-dimensional array
 
         int rows=arrays.length;
         int cols =arrays[0].length;
@@ -163,7 +163,7 @@ public class ArraysL {
         }
 */
 
-        /* Read & Store User Inputs in a two dimensional array */
+        /* Read & Store User Inputs in a two-dimensional array */
 /*
         int rows = sc.nextInt();                            // reads the number of rows
         int cols = sc.nextInt();                            // reads the number of cols
