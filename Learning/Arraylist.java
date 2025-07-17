@@ -205,7 +205,8 @@ public class Arraylist {
 
 //        System.out.println("Type of sportsArr: " + sportsArr.getClass().getSimpleName());
 
-        ArrayList<String> sportsArrList = new ArrayList<>(Arrays.asList(sportsArr)); // converting Array to ArrayList
+        ArrayList<String> sportsArrList = new ArrayList<>(); // converting Array to ArrayList
+        sportsArrList= (ArrayList<String>) Arrays.asList(sportsArr);
 
 //        System.out.println("sportsArrList: " + sportsArrList); // [Basketball", "Cricket", "Football]
 //        System.out.println("Type of sportsArrList: " + sportsArrList.getClass().getSimpleName());
