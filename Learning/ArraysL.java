@@ -9,6 +9,7 @@ public class ArraysL {
         Scanner sc = new Scanner(System.in);
 
         // Introduction
+        //-------------
         // an array is an object used to store the collection of data that are of similar data types.
 
 
