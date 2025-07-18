@@ -1,13 +1,13 @@
 package Learning;
 
 import java.util.Arrays;
-import java.util.Scanner;
+import java.util.Collections;
 import java.util.ArrayList;
 
 public class Arraylist {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+
 
 
         /* Introduction */
@@ -205,8 +205,8 @@ public class Arraylist {
 
 //        System.out.println("Type of sportsArr: " + sportsArr.getClass().getSimpleName());
 
-        ArrayList<String> sportsArrList = new ArrayList<>(); // converting Array to ArrayList
-        sportsArrList= (ArrayList<String>) Arrays.asList(sportsArr);
+        ArrayList<String> sportsArrList = new ArrayList<>(Arrays.asList(sportsArr)); // converting Array to ArrayList
+
 
 //        System.out.println("sportsArrList: " + sportsArrList); // [Basketball", "Cricket", "Football]
 //        System.out.println("Type of sportsArrList: " + sportsArrList.getClass().getSimpleName());
@@ -231,7 +231,184 @@ public class Arraylist {
 
 //        System.out.println("Type of agesArr: " + agesArr.getClass().getSimpleName());
 
-        sc.close();
+        /* Finding Index of an Element */
+        // The indexOf() method returns the index of the first occurrence of the specified element in the ArrayList.
+        // If the ArrayList does not contain the element, -1 is returned
+        // As ArrayLists store elements as objects, the search parameter must be given as an object.
+        // Syntax: arrList.indexOf(obj);
+
+        int index = agesArrList.indexOf((Integer)10);
+//        System.out.println(index);        // output: 1
+
+        /* Finding Frequency of an Element */
+        // The Collections.frequency() method is used to find the frequency with which an element occurs in the given ArrayList.
+        // The java.util package contains the Collections class.
+        // Syntax: Collections.frequency(arrList, obj);
+        ArrayList<Integer> arrList3 = new ArrayList<>();
+        arrList3.add(3);
+        arrList3.add(6);
+        arrList3.add(2);
+        arrList3.add(1);
+        arrList3.add(2);
+
+
+//        System.out.println(arrList3);         // output: [3, 6, 2, 1, 2]
+
+        // Find the frequency of element 2
+        int frequency = Collections.frequency(arrList3, (Integer)2);
+
+//        System.out.println(frequency);        //output: 2
+
+        /* Sorting an ArrayList */
+        // The Collections.sort() method can be used to sort the given ArrayList in two different ways.
+        // 1. Ascending order
+        // 2. Descending order
+
+        /* Ascending Order */
+        // Syntax: Collections.sort(arrList);
+
+//        System.out.println(arrList3);           //output: [3, 6, 2, 1, 2]
+
+        // Sorting the ArrayList in ascending order
+        Collections.sort(arrList3);
+
+//        System.out.println(arrList3);           //output: [1, 2, 2, 3, 6]
+
+        /* Descending Order */
+        // An ArrayList can be sorted in descending order by passing the argument Collection.reverseOrder() to the Collections.sort() method.
+        // Syntax: Collections.sort(arrList, Collections.reverseOrder());
+
+        Collections.sort(arrList3, Collections.reverseOrder());
+//        System.out.println(arrList3);       //output: [6, 3, 2, 2, 1]
+
+        workingWithArray();
+        StringAndArrays();
+    }
+
+    static void workingWithArray(){
+
+        // Working with Arrays & ArrayLists //
+
+        // When the array arr2 is assigned with an existing array arr1, both the array variables arr1 and arr2 will refer to the same array.
+
+        // The same applies to ArrayList.
+
+        /* Modifying Arrays */
+
+        int[] arr1 = {34, 45, 19, 21};
+        int[] arr2 = arr1;
+        arr2[1] = 100;
+        arr1[3] = 76;
+
+//        System.out.println(Arrays.toString(arr1));      // output: [34, 100, 19, 76]
+//        System.out.println(Arrays.toString(arr2));      // output: [34, 100, 19, 76]
+
+        /* Modifying ArrayList */
+
+        ArrayList<Integer> arrList1  = new ArrayList<>();
+
+        arrList1.add(34);
+        arrList1.add(45);
+        arrList1.add(19);
+        arrList1.add(21);
+
+        ArrayList<Integer> arrList2 = arrList1;
+
+        arrList2.set(1, 100);
+        arrList2.set(3, 76);
+
+//        System.out.println(arrList1);               // output: [34, 100, 19, 76]
+//        System.out.println(arrList2);               // output: [34, 100, 19, 76]
+
+        // When arr1 and arr2 are referring to the same array and arr2 is assigned a new array,
+        // then arr2 refers to the new array and arr1 will be referring to the old array.
+
+        // The same applies to ArrayList.
+
+        /* Modifying Arrays */
+
+         arr1 = new int[]{34, 45, 19, 21};
+         arr2 = arr1;
+
+        arr2 = new int[4];
+
+//        System.out.println(Arrays.toString(arr1));      //output: [34, 45, 19, 21]
+//        System.out.println(Arrays.toString(arr2));      //output: [0, 0, 0, 0]
+
+        /* Modifying ArrayList */
+
+         arrList1  = new ArrayList<>();
+
+        arrList1.add(34);
+        arrList1.add(45);
+        arrList1.add(19);
+        arrList1.add(21);
+
+         arrList2 = arrList1;
+
+        arrList2 = new ArrayList<>();
+
+//        System.out.println(arrList1);           //output: [34, 45, 19, 21]
+//        System.out.println(arrList2);           // output: []
+
+        // Updating immutable objects will not affect the values in an array,
+        // as the reference of the immutable object will be changed.
+
+        String name = "John";
+        String[] namesArr = {name, "Smith", "Mike"};
+
+//        System.out.println(Arrays.toString(namesArr));      // output: [John, Smith, Mike]
+
+        name = "John Martin";
+
+//        System.out.println(Arrays.toString(namesArr));        // output: [John, Smith, Mike]
+
+        ArrayList<String> arrList3  = new ArrayList<>();
+
+        name = "John";
+
+        arrList3.add(name);
+        arrList3.add("Smith");
+        arrList3.add("Mike");
+
+//        System.out.println(arrList3);               //output: [John, Smith, Mike]
+
+        name = "John Martin";
+
+//        System.out.println(arrList3);               //output: [John, Smith, Mike]
+
+        // Updating mutable objects will affect the elements in the array
+
+        int[] arr3 = {34, 45, 19, 21};
+        int[] arr4 = {42, 152, 737, 2, 79};
+        int[][] arr5 = {arr3, arr4};
+
+//        System.out.println(Arrays.deepToString(arr5));      // output: [[34, 45, 19, 21], [42, 152, 737, 2, 79]]
+
+        arr3[1] = 65;
+        arr4[4] = 41;
+
+//        System.out.println(Arrays.deepToString(arr5));      // output: [[34, 65, 19, 21], [42, 152, 737, 2, 41]]
+
+    }
+
+    static void StringAndArrays(){
+        /* Splitting Strings */
+        // The split() method is used to split the string at the specified separator. It returns an array of substrings.
+        // Syntax: str.split(separator);
+
+        /* Whitespace as Separator */
+        // The whitespace is passed as an argument for the separator.
+        // str.split(" "):
+
+        String message = "See you soon";
+
+        String[] messageArr = message.split(" ");
+
+//        System.out.println(Arrays.toString(messageArr));        //output: [See, you, soon]
+
+        /* String as Separator */
+
     }
 }
     
