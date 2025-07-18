@@ -408,6 +408,167 @@ public class Arraylist {
 //        System.out.println(Arrays.toString(messageArr));        //output: [See, you, soon]
 
         /* String as Separator */
+        // A String can be used as a separator in the split() method.
+        // Syntax: str1.split(str2);
+
+        message = "See--you--soon";
+
+        messageArr = message.split("--");
+
+//        System.out.println(Arrays.toString(messageArr));        //output: [See, you, soon]
+
+        /* Splitting Strings using Regex */
+        // Regular Expression is a sequence of characters that define a pattern that can be used to search for or manipulate strings.
+        // A regular expression can be a single character or a more complicated pattern.
+
+        /*
+                    metacharacter: dot (.)
+                    bracket list: []
+                    position anchors: ^, $
+                    occurrence indicators: +, *, ?, {}
+                    parentheses: ()
+                    or: |
+                    escape and metacharacter: backslash (\)
+         */
+
+        // apart from these special characters, all other characters match themselves.
+
+        String str = "One1Two22Three333Four";
+
+        String[] stringArr = str.split("[0-9]+");
+
+//        System.out.println(Arrays.toString(stringArr));  //output: [One, Two, Three, Four]
+
+        /* Splitting Strings using Regex Special Characters */
+        message = "See+you+soon";
+
+        messageArr = message.split("\\+");
+
+//        System.out.println(Arrays.toString(messageArr));        //output: [See, you, soon]
+
+
+        /* Joining Strings */
+        // The join() method joins the given elements with the specified delimiter and returns a new String.
+        // A delimiter is a unique character or series of characters that indicates the beginning or end of a specific statement, string, etc.
+
+        // Syntax: String.join(delimiter, str1, str2, ...);
+
+        String str1 = "Java";
+        String str2 = "is a";
+        String str3 = "Programming";
+        String str4 = "Language";
+
+        // joining the strings using join() method
+//        System.out.print(String.join(" ", str1, str2, str3, str4));     //output: Java is a Programming Language
+
+        /* Joining String Arrays */
+        // Syntax: String.join(delimiter, arr);
+
+        String[] stringArr1 = {"Java", "is a", "Programming", "Language"};
+        String result;
+
+        result = String.join("-", stringArr1);
+
+//        System.out.println(result);     //output: Java-is a-Programming-Language
+
+        /* Joining String ArrayList */
+        // Syntax: String.join(delimiter, arrList);
+
+        ArrayList<String> stringArrList = new ArrayList<>();
+
+        stringArrList.add("Java");
+        stringArrList.add("is a");
+        stringArrList.add("Programming");
+        stringArrList.add("Language");
+
+
+        result = String.join("-", stringArrList);
+
+//        System.out.println(result);     //output: Java-is a-Programming-Language
+
+
+        /* Sorting Arrays */
+        // The Arrays.sort() method can be used to sort an array.
+        // Ascending
+        // Descending
+
+        /* Ascending order */
+        // Syntax: Arrays.sort(arr);
+
+        int[] arr1 = {3, 1, 2, 5, 4};
+        Arrays.sort(arr1);
+
+//        System.out.println(Arrays.toString(arr1));           //output: [1, 2, 3, 4, 5]
+
+
+        /* Descending Order */
+        // The reverse sorting is done by passing Collections.reverseOrder() as an argument to the Arrays.sort() method.
+        // we can use primitive data types in Collections class and instead have to use wrapper classes
+
+        // Syntax: Arrays.sort(arr, Collections,reverseOrder());
+        Integer[] arr2 = {3, 1, 2, 5, 4};
+        Arrays.sort(arr2, Collections.reverseOrder());
+
+//        System.out.println(Arrays.toString(arr2));      //output: [5, 4, 3, 2, 1]
+
+
+        /* Reversing Sequences */
+        /* Reversing Strings */
+        // A string value can be reversed by converting a string into a character array then running it through a loop in reverse order.
+        // To get a character array from a string we can use the string method toCharArray()
+
+        // Syntax: str.toCharArray();
+
+        String string= "Bharath";
+        char ch[] = string.toCharArray();
+        String rev = "";
+
+        for (int i = ch.length -1; i >= 0; i --){
+            rev+= ch[i];
+        }
+
+//        System.out.println("Original: " + string);          //output: Original: Bharath
+//        System.out.println("Reversed: " + rev);             //output: Reversed: htarahB
+
+        /* Reversing Arrays */
+
+        /*
+                The Collections.reverse() method is used for reversing the elements present in the array passed as an argument to this method.
+                While using the Collections class, we cannot use primitive data types (int, float, etc).
+                Instead, we must use their wrapper classes (Integer, Float, etc).
+                To use the Collections.reverse() method, the array needs to be converted to an ArrayList.
+                We use the Arrays.asList() method to convert the Array to the ArrayList and pass it to the Collections.reverse() method.
+                Any changes done to the ArrayList by the Collections.reverse() method will be reflected in the Array.
+         */
+
+        // Syntax: Collections.reverse(Arrays.asList(arr));
+
+        Integer[] arr = {3, 30, 8, 24};
+
+//        System.out.println("Original Array: " + Arrays.toString(arr));          //output: Original Array: [3, 30, 8, 24]
+
+        Collections.reverse(Arrays.asList(arr)); // reversing the elements of the array
+
+//        System.out.println("Reversed Array: " + Arrays.toString(arr));          //output: Reversed Array: [24, 8, 30, 3]
+
+        /* Reversing ArrayList */
+        // Syntax: Collections.reverse(arrList);
+
+        ArrayList<Integer> arrList = new ArrayList<>();
+
+        arrList.add(1);
+        arrList.add(2);
+        arrList.add(3);
+        arrList.add(4);
+
+//        System.out.print("Original ArrayList: "+arrList+"\n");       //output: Original ArrayList: [1, 2, 3, 4]
+
+
+        Collections.reverse(arrList); // reversing the elements of the ArrayList
+
+//        System.out.print("Reversed ArrayList: "+arrList+"\n");      //output: Reversed ArrayList: [4, 3, 2, 1]
+
+
 
     }
 }
